@@ -1,8 +1,8 @@
 FROM node:lts-alpine as build-stage
 
 # Configure Vue App Environment Variables
-#ARG WEB_UI_GTA_KEY
-#ENV VITE_GTA_KEY=$WEB_UI_GTA_KEY
+ARG SHIFTER_API_HOSTNAME
+ENV VITE_SHIFTER_API_HOSTNAME=$SHIFTER_API_HOSTNAME
 
 WORKDIR /app
 COPY package*.json ./

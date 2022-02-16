@@ -6,6 +6,7 @@
     <div class="grid grid-cols-1 gap-10 mt-2 sm:mt-12 md:mt-20 lg:mt-40">
         <div class="grid grid-cols-1 px-2 sm:px-4 md:px-12 lg:px-24">
             <div class="p-3"><span class="font-semibold text-5xl tracking-tight text-teal-200">Shifter</span></div>
+            {{SHIFTER_API_HOSTNAME}}
             <div class="bg-opacity-50 text-white rounded h-fill h-24 px-4 text-sm sm:text-base md:text-lg lg:text-xl">Shifting Workloads with Shifter is a simple three step process. Upload your OpenShift Manifest files, Convert them to Kubernetes Manifest files. Download your new manifest files for application to your Kubernetes, ATHOS or GKE clusters.</div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 px-2 sm:px-4 md:px-12 lg:px-24">
@@ -92,6 +93,10 @@
         }
     },
     computed: {
+        
+        SHIFTER_API_HOSTNAME(){
+            return import.meta.env.VITE_SHIFTER_API_HOSTNAME
+        },
         disabledConvertButton(){
             if (this.filesToConvert >= 1){
                 // Enable Button
@@ -133,7 +138,7 @@
         },
 
         downloadFile(link) {
-            window.open("http://34.78.47.231/api/v1"+link)
+            window.open(import.meta.env.VITE_SHIFTER_API_HOSTNAME+link)
         },
 
         upload(event) {
@@ -145,7 +150,7 @@
 
             var config = {
                 method: 'post',
-                url: 'http://34.78.47.231/api/v1/convert/yaml/yaml',
+                url: (import.meta.env.VITE_SHIFTER_API_HOSTNAME+'/convert/yaml/yaml'),
                 headers: {
                 'Content-Type': 'multipart/form-data'
                 },
