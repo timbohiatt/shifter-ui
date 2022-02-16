@@ -133,7 +133,7 @@
         },
 
         downloadFile(link) {
-            window.open("https://shifter.dev.timhiatt-gcp-labs.com/api/v1"+link)
+            window.open("http://34.78.47.231/api/v1"+link)
         },
 
         upload(event) {
@@ -145,12 +145,14 @@
 
             var config = {
                 method: 'post',
-                url: '/api/convert/yaml/yaml',
+                url: 'http://34.78.47.231/api/v1/convert/yaml/yaml',
                 headers: {
                 'Content-Type': 'multipart/form-data'
                 },
                 data : data
             };
+
+            console.log(config)
 
             var self = this;
             this.axios(config)

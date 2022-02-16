@@ -3,15 +3,15 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
+  /*server: {
     proxy: {
       "/api": {
-        target: "https://shifter.dev.timhiatt-gcp-labs.com:8080/api/v1/",
+        target: "34.78.47.231:8080/api/v1/",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
-  },
+  },*/
   plugins: [vue()],
 })
