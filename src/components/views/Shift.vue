@@ -1,6 +1,5 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+
 </script>
 
 <template>
@@ -134,7 +133,7 @@
         },
 
         downloadFile(link) {
-            window.open("http://localhost:8082/api/v1"+link)
+            window.open("https://shifter.dev.timhiatt-gcp-labs.com/api/v1"+link)
         },
 
         upload(event) {

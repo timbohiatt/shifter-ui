@@ -4,6 +4,7 @@
 </script>
 
 <template>
+<div>The about Page</div>
    
 </template>
 

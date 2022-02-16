@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8082/api/v1/",
+        target: "https://shifter.dev.timhiatt-gcp-labs.com:8080/api/v1/",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
