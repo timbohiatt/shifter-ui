@@ -13,7 +13,7 @@ steps:
     args:
       - -c
       - |
-        echo $(cat ../app_version.txt)
-        docker build -t gcr.io/${PROJECT_ID}/shifter-ui/${$BRANCH_NAME}/shifter-ui:$(cat ../app_version.txt) -t gcr.io/${PROJECT_ID}/shifter-ui/${$BRANCH_NAME}/shifter-ui:latest .
-        docker push gcr.io/${PROJECT_ID}/shifter-ui/${$BRANCH_NAME}/shifter-ui:$(cat ../app_version.txt)
+        echo $(cat ./workspace/app_version.txt)
+        docker build -t gcr.io/${PROJECT_ID}/shifter-ui/${$BRANCH_NAME}/shifter-ui:$(cat ./workspace/app_version.txt) -t gcr.io/${PROJECT_ID}/shifter-ui/${$BRANCH_NAME}/shifter-ui:latest .
+        docker push gcr.io/${PROJECT_ID}/shifter-ui/${$BRANCH_NAME}/shifter-ui:$(cat ./workspace/app_version.txt)
         docker push gcr.io/${PROJECT_ID}/shifter-ui/${$BRANCH_NAME}/shifter-ui:latest
