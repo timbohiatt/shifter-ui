@@ -305,7 +305,12 @@
                 }
             })
             .catch(function (error) {
-                alert("hit an error")
+                // Notification Error
+                console.log(error)
+                self.$notify({
+                    title: "Conversion Error",
+                    text: error,
+                });
                 console.log(error);
             });
         }

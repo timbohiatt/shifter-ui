@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation.vue";
 <template>
   <div>
     <Navigation class="z-50"/>
+	<notifications />
     <router-view class="z-30"/>
 	<!--<div class="scanlines"></div>-->
   </div>
