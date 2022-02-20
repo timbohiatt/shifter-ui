@@ -18,3 +18,4 @@ steps:
         docker build -t gcr.io/${_PROJECT_ID}/${$BRANCH_NAME}/${_ENV}/shifter-ui:$(cat ../app_version.txt) -t gcr.io/${_PROJECT_ID}/${$BRANCH_NAME}/${_ENV}/shifter-ui:latest .
         docker push gcr.io/${_PROJECT_ID}/${$BRANCH_NAME}//${_ENV}/shifter-ui:$(cat ../app_version.txt)
         docker push gcr.io/${_PROJECT_ID}/${$BRANCH_NAME}//${_ENV}/shifter-ui:latest
+        
