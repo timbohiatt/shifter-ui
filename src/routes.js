@@ -12,7 +12,7 @@ const routes = [
     { path: '/shift', name: 'Shift', component: Shift},
     { path: '/about', name: 'About', component: About},
     { path: '/status/healthz', name: 'Healthz', component: Healthz},
-    { path: '/404', name: 'Healthz', component: Error404}
+    { path: '/404', name: '404', component: Error404}
 ]
 const router = createRouter({
     history: createWebHistory(),

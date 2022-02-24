@@ -268,7 +268,7 @@
         },
 
         downloadFile(link) {
-            window.open("http://localhost:8082/api/v1"+link)
+            window.open(this.$shifterConfig.API_BASE_URL+link)
         },
 
         runShifter(event) {
@@ -280,7 +280,7 @@
 
             var config = {
                 method: 'post',
-                url: ('api/convert/yaml/yaml'),
+                url: (this.$shifterConfig.API_BASE_URL+'/convert/yaml/yaml'),
                 headers: {
                 'Content-Type': 'multipart/form-data'
                 },
@@ -314,6 +314,9 @@
                 console.log(error);
             });
         }
+    },
+    mounted(){
+        console.log()
     }
   }
 </script>

@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  envPrefix: 'SHIFTER_UI__',
   server: {
     proxy: {
       "/api": {
@@ -13,5 +14,6 @@ export default defineConfig({
       },
     },
   },
+  mixins:[],
   plugins: [vue()],
 })

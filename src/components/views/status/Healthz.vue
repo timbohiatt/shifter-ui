@@ -4,8 +4,10 @@
 </script>
 
 <template>
-<div>Healthz Checks</div>
-   
+    <div>
+        Healthz Checks:
+        Base URL: {{$shifterConfig.API_BASE_URL}}
+    </div>
 </template>
 
 <style>
