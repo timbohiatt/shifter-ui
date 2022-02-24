@@ -15,6 +15,6 @@ steps:
       - -c
       - |
         echo $(cat /workspace/app_version.txt)
-        docker build --build-arg="API_BASE_URL=api.shifter.cloud/api/v1" -t gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:$(cat /workspace/app_version.txt) -t gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:latest .
+        docker build --build-arg="API_BASE_URL=dev.api.shifter.cloud/api/v1" -t gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:$(cat /workspace/app_version.txt) -t gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:latest .
         docker push gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:$(cat /workspace/app_version.txt)
         docker push gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:latest
