@@ -21,6 +21,7 @@
     data() {
         return { 
             ServerHealthz: {
+                Response: "",
                 Message: "Error, Unable to reach Shifter Server"
             }
         }
@@ -40,23 +41,18 @@
             .then(function (response) {
                 console.log(response)
                 if(response.status === 200){
-                    // Response Contains List of Converted File Objects
-                    if (response.data.convertedFiles){
-                        // Set Download File List with Response Data
-                        self.downloads = response.data.convertedFiles
+                    // Response Contains Healthz Response from Shifter Server
+                    if (response.data){
+                        // Store Response Data
+                        self.ServerHealthz.Response = response.data;
                     }
-                }
-                self.downloads = response.data.convertedFiles;
-                if (self.downloads.length >= 1){
-                    self.files = []
-                    self.nextStep()
                 }
             })
             .catch(function (error) {
                 // Notification Error
                 console.log(error)
                 self.$notify({
-                    title: "Conversion Error",
+                    title: "Error: Unable to Reach Shifter Server",
                     text: error,
                 });
                 console.log(error);
