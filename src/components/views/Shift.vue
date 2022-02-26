@@ -316,7 +316,6 @@
         }
     },
     mounted(){
-        console.log()
     }
   }
 </script>
