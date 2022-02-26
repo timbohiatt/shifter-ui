@@ -45,6 +45,7 @@
                     if (response.data){
                         // Store Response Data
                         self.ServerHealthz.Response = response.data;
+                        self.ServerHealthz.Message = response.data.message
                     }
                 }
             })
