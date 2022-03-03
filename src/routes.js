@@ -4,6 +4,7 @@ import Home from './components/views/Home.vue'
 import Shift from './components/views/Shift.vue'
 import About from './components/views/About.vue'
 import Healthz from './components/views/status/Healthz.vue'
+import Settingz from './components/views/status/Settingz.vue'
 import Error404 from './components/views/status/404.vue'
 
 
@@ -12,6 +13,7 @@ const routes = [
     { path: '/shift', name: 'Shift', component: Shift},
     { path: '/about', name: 'About', component: About},
     { path: '/status/healthz', name: 'Healthz', component: Healthz},
+    { path: '/status/settingz', name: 'Settingz', component: Settingz},
     { path: '/404', name: '404', component: Error404}
 ]
 const router = createRouter({
