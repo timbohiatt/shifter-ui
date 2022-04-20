@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation.vue";
 <template>
   <div>
     <Navigation class="z-50"/>
+	<notifications />
     <router-view class="z-30"/>
 	<!--<div class="scanlines"></div>-->
   </div>
@@ -285,14 +286,8 @@ body {
 }
  .subtitle {
 	 font-family: Arial, Helvetica, sans-serif;
-	 font-weight: 100;
-	 /*font-size: 0.8vw;*/
 	 color: rgba(165, 141, 141, .4);
-	 text-transform: uppercase;
-	 letter-spacing: 0.4em;
-	 text-align: left;
 	 position: absolute;
-	 left: 25%;
 	 animation: glitch-2 5s 5.02s infinite;
 }
  @keyframes glitch-2 {

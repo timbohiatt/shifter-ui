@@ -6,8 +6,8 @@
 <template>
     <div>
         <div class="glitch-wrapper">
-            <div class="glitch" data-text="SHIFTER">SHIFTER</div>
-            <div class="glow">SHIFTER</div>
+            <div class="glitch" data-text="404">404</div>
+            <div class="glow">404</div>
             <p class="
                 subtitle 
                 uppercase
@@ -37,9 +37,12 @@
                 2xl:-mt-10 
                 2xl:font-thin
             "
-            >Convert RedHat OpenShift workloads for Kubernetes</p>
+            >Failed to Shift!</p>
         </div>
     </div>
 </template>
 
+<style>
 
+
+</style>

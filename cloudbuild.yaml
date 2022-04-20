@@ -1,0 +1,20 @@
+steps:
+  - id: "Generate UI App Version"
+    name: node
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        # Save package.json app version to persistent volume mount: "/workspace"
+        echo $(node -p -e "require('./package.json').version")
+        echo $(node -p -e "require('./package.json').version") > /workspace/app_version.txt
+  - id: "Build Web Container"
+    name: "gcr.io/cloud-builders/docker"
+    entrypoint: "sh"
+    args:
+      - -c
+      - |
+        echo $(cat /workspace/app_version.txt)
+        docker build --build-arg="API_BASE_URL=https://dev.api.shifter.cloud/api/v1" -t gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:$(cat /workspace/app_version.txt) -t gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:latest .
+        docker push gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:$(cat /workspace/app_version.txt)
+        docker push gcr.io/$PROJECT_ID/shifter-ui/$BRANCH_NAME/shifter-ui:latest
